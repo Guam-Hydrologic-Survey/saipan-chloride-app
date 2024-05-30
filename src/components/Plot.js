@@ -132,7 +132,7 @@ export function getPlot(data, element) {
     Plot(data, element);
 
     // update contents of large-plot-container
-    const largePlotTitle = `Nitrate-N Levels for Well ${data.name}`;
+    const largePlotTitle = `Chloride Levels for Well ${data.name}`;
     document.getElementById("large-plot-container-title").innerHTML = `<span style="font-size: 26px; font-weight: 700; text-align: center;">${largePlotTitle}</span>`;
     largePlot(data, "large-plot-container-body");
 
