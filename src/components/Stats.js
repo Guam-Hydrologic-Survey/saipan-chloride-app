@@ -44,10 +44,10 @@ function basicStats(statistics) {
             </div>
             <!-- values for basic statistics --> 
             <div class="stats-col">
-                <p class="stats-num">${roundDec(statistics.facility_ID)}</p>
-                <p class="stats-num">${roundDec(statistics.source_ID)}</p>
-                <p class="stats-num">${roundDec(statistics.station_no)}</p>
-                <p class="stats-num">${roundDec(statistics.island)}</p>
+                <p class="stats-num">${statistics.facility_ID}</p>
+                <p class="stats-num">${statistics.source_ID}</p>
+                <p class="stats-num">${statistics.station_no}</p>
+                <p class="stats-num">${statistics.island}</p>
             </div>
         </div>
     </div>
