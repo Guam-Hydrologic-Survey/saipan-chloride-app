@@ -16,7 +16,7 @@ function header(statistics) {
     `
     <div class="side-panel-header">
         <h4>Well ${statistics.name}</h4>
-        <div class="location" id="basin">Facility Name: ${statistics.facility_name} </div>
+        <div class="location" id="basin">${statistics.well_name} </div>
         <div class="location" id="coords">${roundDec(statistics.lat)}, ${roundDec(statistics.lon)}</div>
     </div>
     <hr/>
@@ -37,17 +37,17 @@ function basicStats(statistics) {
         <div class="stats-row">
             <!-- labels for basic statistics -->
             <div class="stats-col">
-                <p class="stats-text">Average</p>
-                <p class="stats-text">Min</p>
-                <p class="stats-text">Max</p>
-                <p class="stats-text">N-Data</p>
+                <p class="stats-text">Facility ID</p>
+                <p class="stats-text">Source ID</p>
+                <p class="stats-text">Station No.</p>
+                <p class="stats-text">Island</p>
             </div>
             <!-- values for basic statistics --> 
             <div class="stats-col">
-                <p class="stats-num">${roundDec(statistics.average)}</p>
-                <p class="stats-num">${roundDec(statistics.min)}</p>
-                <p class="stats-num">${roundDec(statistics.max)}</p>
-                <p class="stats-num">${roundDec(statistics.n_data)}</p>
+                <p class="stats-num">${roundDec(statistics.facility_ID)}</p>
+                <p class="stats-num">${roundDec(statistics.source_ID)}</p>
+                <p class="stats-num">${roundDec(statistics.station_no)}</p>
+                <p class="stats-num">${roundDec(statistics.island)}</p>
             </div>
         </div>
     </div>
@@ -76,19 +76,16 @@ function additionalStats(statistics) {
                     <div class="stats-row">
                         <!-- labels for additional statistics -->
                         <div class="stats-col">
-                            <p class="stats-text">Facility ID</p>
-                            <p class="stats-text">Street Num ID</p>
-                            <p class="stats-text">PWSS Name</p>
-                            <p class="stats-text">Source Type</p>
-                            <p class="stats-text">Assigned Capacity</p>
+                            <p class="stats-text">Analyte</p>
+                            <p class="stats-text">Unit</p>
+                            <p class="stats-text">Production</p>
                         </div>
                         <!-- values for additional statistics -->
                         <div class="stats-col">                
-                            <p class="stats-num">${(statistics.facility_ID)}</p>
-                            <p class="stats-num">${(statistics.streetNum_ID)}</p>              
-                            <p class="stats-num">${(statistics.pwss_name)}</p>
-                            <p class="stats-num">${(statistics.source_type)}</p>
-                            <p class="stats-num">${(statistics.assigned_capacity)}</p>
+                            <p class="stats-num">${(statistics.analyte)}</p>
+                            <p class="stats-num">${(statistics.unit)}</p>              
+                            <p class="stats-num">${(statistics.production)}</p>
+
                         </div>
                     </div>
                 </div>
