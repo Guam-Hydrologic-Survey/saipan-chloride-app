@@ -4,7 +4,7 @@
     { 
       "type": "Feature",
       "properties": {
-          "WID": "001-1",
+          "name": "001-1",
           "lat": 15.130556,
           "lon": 145.7225,
           "facility_ID": "MP0000001-GW001",
@@ -26,7 +26,7 @@
     { 
       "type": "Feature",
       "properties": {
-          "WID": "001-171",
+          "name": "001-171",
           "lat": 15.209818,
           "lon": 145.724983,
           "facility_ID": "MP0000171-GW001",
@@ -48,7 +48,7 @@
     { 
       "type": "Feature",
       "properties": {
-          "WID": "001-21",
+          "name": "001-21",
           "lat": 15.208959,
           "lon": 145.720076,
           "facility_ID": "MP0000001-GW001",
@@ -70,7 +70,7 @@
     { 
       "type": "Feature",
       "properties": {
-          "WID": "001-212",
+          "name": "001-212",
           "lat": 15.185864,
           "lon": 145.718559,
           "facility_ID": "MP0000001-GW001",
@@ -92,7 +92,7 @@
     { 
       "type": "Feature",
       "properties": {
-          "WID": "001-224",
+          "name": "001-224",
           "lat": 15.210934,
           "lon": 145.71789,
           "facility_ID": "MP0000001-GW001",
