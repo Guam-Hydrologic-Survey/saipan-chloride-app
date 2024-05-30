@@ -24,7 +24,7 @@ export function SidePanel(data) {
       <div class="offcanvas-body" id="side-panel-content">
         <div id="stats-content"></div>
         <br><br>
-        <h5>Nitrate-N Levels</h5>
+        <h5>Chloride Levels</h5>
         <hr>
         <div id="plot-content"></div>
         <br><br><br><br>
