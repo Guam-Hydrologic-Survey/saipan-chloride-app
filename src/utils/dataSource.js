@@ -7,6 +7,6 @@ Return:
 // update this with data set; must be full path, starting from the root directory 
 // const geoJsonUrl = "./src/data/dummy_data.json";
 
-const geoJsonUrl = "./src/data/saipan_chloride.json";
+const geoJsonUrl = "./src/data/saipan_chloride2.json";
 
 export { geoJsonUrl }
