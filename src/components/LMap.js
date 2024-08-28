@@ -11,6 +11,7 @@ import { MarkerPopup } from "./MarkerPopup.js";
 import { MultiplePlots } from "./Plot.js";
 import { completeSelection, additionalSelection, alreadySelected } from "./Toast.js";
 import { SelectionView, choices, choicesLayers, createCheckBox } from "./SelectionView.js";
+import { getIcon } from "./CustomIcon.js";
 
 // utils 
 import { geoJsonUrl } from "../utils/dataSource.js";
@@ -240,7 +241,23 @@ export function LMap(element) {
                     }
                 })
             }
-            geoJsonData = L.geoJSON(geojson, { onEachFeature: (getValues) }).addTo(map);
+            geoJsonData = L.geoJSON(geojson, { 
+                pointToLayer: function(feature, latlng) { // Designates custom marker for each well 
+                    let svg = getIcon(feature.properties); 
+
+                    let point = L.marker(latlng, {
+                        icon: L.divIcon({
+                            className: "custom-icon",
+                            html: `${svg}`,
+                            iconSize: [30, 30],
+                        }),
+                    });
+
+
+                    return point;
+                },
+                onEachFeature: (getValues) 
+            }).addTo(map);
             layerControl.addOverlay(geoJsonData, "Layer Name");
 
             // for search control 
