@@ -1,0 +1,46 @@
+{
+    "chlorideRange": [
+        {
+            "name": "blue",
+            "hex": "#0070FF",
+            "rgb": "rgb(0,112,255)",
+            "range": "(0 - 30]"
+        },
+        {
+            "name": "green",
+            "hex": "#55FF00",
+            "rgb": "rgb(85,255,0)",
+            "range": "(30 - 150]"
+        },
+        {
+            "name": "yellow",
+            "hex": "#FFFF01",
+            "rgb": "rgb(255,255,1)",
+            "range": "(150 - 250]"
+        },
+        {
+            "name": "orange",
+            "hex": "#FFAA00",
+            "rgb": "rgb(255,170,0)",
+            "range": "(250 - 500]"
+        },
+        {
+            "name": "red",
+            "hex": "#FF0000",
+            "rgb": "rgb(255,0,0)",
+            "range": "(500 - 750]"
+        },
+        {
+            "name": "magenta",
+            "hex": "#A50080",
+            "rgb": "rgb(165,0,128)",
+            "range": "(750 - 1000]"
+        },
+        {
+            "name": "purple",
+            "hex": "#73004C",
+            "rgb": "rgb(115,0,76)",
+            "range": "1000+"
+        }
+    ]
+}
