@@ -44,7 +44,7 @@ export function Legend(element) {
     let chloride = document.getElementById(chlorideId) 
     chloride.innerHTML = /*html*/
     `
-    <h6>Chloride </h6>
+    <h6>Chloride - ppm (mg/L) </h6>
     `;
   
     
