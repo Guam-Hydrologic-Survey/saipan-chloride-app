@@ -93,7 +93,7 @@ export function LMap(element) {
     //TODO: CHANGE MAP TITLE CARD
     mapTitle.onAdd =  function(map) {
         this._div = L.DomUtil.create('div', 'mapTitle'); 
-        // this._div.innerHTML = '<img src="./src/assets/WERI_MappFx_CNMI_Well_Nitrates_Title_Card_White_Bold.png" height="125">';
+        this._div.innerHTML = '<img src="./src/assets/WERI_MAppFx_CNMI_Well_Chlorides_Title_Card_White_Bold.png" height="125">';
         return this._div;
     };
 
