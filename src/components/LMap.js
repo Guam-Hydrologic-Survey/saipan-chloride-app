@@ -11,6 +11,8 @@ import { MarkerPopup } from "./MarkerPopup.js";
 import { MultiplePlots } from "./Plot.js";
 import { completeSelection, additionalSelection, alreadySelected } from "./Toast.js";
 import { SelectionView, choices, choicesLayers, createCheckBox } from "./SelectionView.js";
+import { checkLastValue, getIcon } from "./CustomIcon.js";
+import { chlorideToggleBtns, layersResetBtnId, layersRemoveBtnId } from "./Legend_v3.js";
 
 // utils 
 import { geoJsonUrl } from "../utils/dataSource.js";
@@ -91,7 +93,7 @@ export function LMap(element) {
     //TODO: CHANGE MAP TITLE CARD
     mapTitle.onAdd =  function(map) {
         this._div = L.DomUtil.create('div', 'mapTitle'); 
-        // this._div.innerHTML = '<img src="./src/assets/WERI_MappFx_CNMI_Well_Nitrates_Title_Card_White_Bold.png" height="125">';
+        this._div.innerHTML = '<img src="./src/assets/WERI_MAppFx_CNMI_Production_Chloride_Title_Card_White_Bold.png" height="125">';
         return this._div;
     };
 
@@ -171,6 +173,145 @@ export function LMap(element) {
         layerControl.addOverlay(drawnFeatures, "Drawings");
     } 
 
+     // TODO - refine layers for chloride ranges
+    // Layer groups for chloride ranges 
+    let chlorideLayers = "Toggle All Chloride Levels"; 
+
+    const chlorideRange0to30 = L.layerGroup();
+    const chlorideRange150 = L.layerGroup();
+    const chlorideRange250 = L.layerGroup();
+    const chlorideRange500 = L.layerGroup();
+    const chlorideRange750 = L.layerGroup();
+    const chlorideRange1000 = L.layerGroup();
+    const chlorideRange1000Plus = L.layerGroup();
+
+    function checkLayerExistence(layer) {
+        if (!map.hasLayer(layer)) {
+            layer.addTo(map);
+        } else {
+            map.removeLayer(layer);
+        }
+    }
+
+    function checkCheckBox(choice, layer) {
+        if (choice) {
+            layer.addTo(map)
+        } else {
+            map.removeLayer(layer)
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', (e) => {
+        setTimeout(() => {
+
+            chlorideRange0to30.addTo(map);
+            chlorideRange150.addTo(map);
+            chlorideRange250.addTo(map);
+            chlorideRange500.addTo(map);
+            chlorideRange750.addTo(map);
+            chlorideRange1000.addTo(map);
+            chlorideRange1000Plus.addTo(map);
+            
+
+            // TODO - simplify adding layers back to map
+            // Resets layers on map (adds everything back)
+            document.getElementById(layersResetBtnId).addEventListener('click', () => {
+                chlorideRange0to30.addTo(map);
+                chlorideRange150.addTo(map);
+                chlorideRange250.addTo(map);
+                chlorideRange500.addTo(map);
+                chlorideRange750.addTo(map);
+                chlorideRange1000.addTo(map);
+                chlorideRange1000Plus.addTo(map);
+                // Check the respective checkboxes
+                // Check all checkboxes value
+                const checkboxes = document.querySelectorAll('.form-check-input');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = true;
+                });
+            });
+
+            // TODO - add event listener for REMOVE LAYERS button on Legend panel 
+            document.getElementById(layersRemoveBtnId).addEventListener('click', () => {
+                // PSEUDOCODE: uncheck all boxes, remove all chloride and production layers from map 
+                const checkboxes = document.querySelectorAll('.form-check-input');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+
+                map.removeLayer(chlorideRange0to30);
+                map.removeLayer(chlorideRange150);
+                map.removeLayer(chlorideRange250);
+                map.removeLayer(chlorideRange500);
+                map.removeLayer(chlorideRange750);
+                map.removeLayer(chlorideRange1000);
+                map.removeLayer(chlorideRange1000Plus);
+
+            });
+
+            // TODO - change to for loop, add each chlorideRange layer into an array list (same goes for productionRange layers)
+            // Event listeners for chloride range layers 
+            document.getElementById(chlorideToggleBtns[0]).addEventListener('click', () => {
+                checkLayerExistence(chlorideRange0to30)
+            });
+
+            document.getElementById(chlorideToggleBtns[1]).addEventListener('click', () => {
+                checkLayerExistence(chlorideRange150)
+            });
+            
+            document.getElementById(chlorideToggleBtns[2]).addEventListener('click', () => {
+                checkLayerExistence(chlorideRange250)
+            }); 
+
+            document.getElementById(chlorideToggleBtns[3]).addEventListener('click', () => {
+                checkLayerExistence(chlorideRange500)
+            });
+
+            document.getElementById(chlorideToggleBtns[4]).addEventListener('click', () => {
+                checkLayerExistence(chlorideRange750)
+            });
+            
+            document.getElementById(chlorideToggleBtns[5]).addEventListener('click', () => {
+                checkLayerExistence(chlorideRange1000)
+            });
+
+            document.getElementById(chlorideToggleBtns[6]).addEventListener('click', () => {
+                checkLayerExistence(chlorideRange1000Plus)
+            });
+
+          
+
+            //
+            document.getElementById(chlorideToggleBtns[1]).addEventListener('click', (e) => {
+                checkCheckBox(e.target.checked, chlorideRange150)
+            });
+            
+            document.getElementById(chlorideToggleBtns[2]).addEventListener('click', (e) => {
+                checkCheckBox(e.target.checked, chlorideRange250)
+            }); 
+
+            document.getElementById(chlorideToggleBtns[3]).addEventListener('click', (e) => {
+                checkCheckBox(e.target.checked, chlorideRange500)
+            });
+
+            document.getElementById(chlorideToggleBtns[4]).addEventListener('click', (e) => {
+                checkCheckBox(e.target.checked, chlorideRange750)
+            });
+            
+            document.getElementById(chlorideToggleBtns[5]).addEventListener('click', (e) => {
+                checkCheckBox(e.target.checked, chlorideRange1000)
+            });
+
+            document.getElementById(chlorideToggleBtns[6]).addEventListener('click', (e) => {
+                checkCheckBox(e.target.checked, chlorideRange1000Plus)
+            });
+
+
+        
+
+    }, 1000);
+    });
+
     // console.log(pointSelectBtn.options.states);
 
     const pointSelectionControls = L.easyBar([
@@ -240,7 +381,47 @@ export function LMap(element) {
                     }
                 })
             }
-            geoJsonData = L.geoJSON(geojson, { onEachFeature: (getValues) }).addTo(map);
+            geoJsonData = L.geoJSON(geojson, { 
+                pointToLayer: function(feature, latlng) { // Designates custom marker for each well 
+                    let svg = getIcon(feature.properties); 
+
+                    let point = L.marker(latlng, {
+                        icon: L.divIcon({
+                            className: "custom-icon",
+                            html: `${svg}`,
+                            iconSize: [30, 30],
+                        }),
+                    });
+
+                    // Add point to chloride range layer group
+                    const latestChloride = checkLastValue(feature.properties.y_vals)[0]
+
+                    // Adds point to chloride range layer based on value 
+                    if (latestChloride == null ) {
+                        point.addTo(chlorideRange0to30);
+                    } else if (latestChloride == 0) {
+                        point.addTo(chlorideRange0to30);
+                    } else if (latestChloride <= 30) {
+                        point.addTo(chlorideRange0to30);
+                    } else if (latestChloride <= 150) {
+                        point.addTo(chlorideRange150);
+                    } else if (latestChloride <= 250) {
+                        point.addTo(chlorideRange250);
+                    } else if (latestChloride <= 500) {
+                        point.addTo(chlorideRange500);
+                    } else if (latestChloride <= 750) {
+                        point.addTo(chlorideRange750);
+                    } else if (latestChloride <= 1000) {
+                        point.addTo(chlorideRange1000);
+                    } else if (latestChloride > 1000) {
+                        point.addTo(chlorideRange1000Plus);
+                    }
+
+
+                    return point;
+                },
+                onEachFeature: (getValues) 
+            }).addTo(map);
             layerControl.addOverlay(geoJsonData, "Layer Name");
 
             // for search control 

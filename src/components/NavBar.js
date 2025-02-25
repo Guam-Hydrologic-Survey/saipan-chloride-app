@@ -22,12 +22,30 @@ export function NavBar(element) {
         </svg>
       </button>
 
+      <!-- Toggle for Legend modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#legend" title="Legend">
+      <!--
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
+          <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+          <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
+        </svg>
+        -->
+        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.41439 5.63953L4.09302 1L6.77166 5.63953H1.41439Z" fill="white" stroke="white"/>
+        <circle cx="4.83712" cy="11.5347" r="2.84884" fill="white" stroke="white"/>
+        <rect x="9.80225" y="4.59302" width="5.69767" height="5.69767" fill="white" stroke="white"/>
+        </svg>  
+      </button>
+
       <!-- link to GHS page -->
+      <!--
       <a class="btn btn-primary" href="${ghsPageLink}" target="_blank" rel="noreferrer noopener" role="button" title="Home">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
           <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
         </svg>
       </a>
+      -->
     
       <!-- dropdown for links to WERI and GHS sites -->
       <div class="btn-group" role="group">
