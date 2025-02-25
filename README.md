@@ -1,5 +1,9 @@
 <h1 align="center">MAppFx: Saipan, CNMI - Production Well Chloride </h1>
 
+<img src="./src/assets/MAppFx_CNMI-Chloride_v-2025.02_Preview.png"/>
+
+<p align="center"><i><b>Figure 1.</b>Preview of map user interface with data points.</i></p>
+
 ## Abstract 
 
 __MAppFx__ is a web page interactive map environment that retrieves an interactive graph of a site upon clicking a map feature object (be it a point, polygon, or a line). WERI Web MAppFx is a product of WERI through the Guam Hydrologic Survey Program (P.L. 24-247) and USGS 104-b, available through the [Guam Hydrologic Survey website](https://guamhydrologicsurvey.uog.edu/). 
@@ -10,7 +14,7 @@ In terms of future development, the team behind WERI MAppFx plans to further enh
 
 The ultimate goal is to seek approval to make this valuable product available for public viewing online, ensuring that it serves as a powerful tool for a wide range of users. 
 
-> Keywords: Saipan, CNMI, production wells, chloride, data visualization, user interface, maps, historical graphcs
+> Keywords: Saipan, CNMI, production wells, chloride, data visualization, user interface, maps, historical graphs
 
 ## WERI Technical Report (coming soon)
 
@@ -31,3 +35,7 @@ G. Arriola, T. Spaeth & BECQ Team
 S. Khosrowpanah, M.A. Lander & B. Whitman 
 
 - _University of Guam's Web Team_ | J. Wiglesworth, M. Raymundo, R. Hidalgo & UOG Web Team 
+
+## MAppFx Library
+
+WERI's collection of MAppFx web apps is available online in the Guam Hydrologic Survey's Library, [here](https://guamhydrologicsurvey.uog.edu/index.php/mappfx/).
