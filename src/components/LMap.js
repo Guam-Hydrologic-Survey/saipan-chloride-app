@@ -314,11 +314,11 @@ export function LMap(element) {
 
     // console.log(pointSelectBtn.options.states);
 
-    const pointSelectionControls = L.easyBar([
-        pointSelectBtn,
-    ], { position: "bottomright" });
+    // const pointSelectionControls = L.easyBar([
+    //     pointSelectBtn,
+    // ], { position: "bottomright" });
 
-    pointSelectionControls.addTo(map);
+    // pointSelectionControls.addTo(map);
     
     lassoControl.addTo(map); 
 
