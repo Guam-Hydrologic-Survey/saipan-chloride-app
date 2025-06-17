@@ -74,7 +74,7 @@ export function About(element) {
           </div> <!-- end of modal body -->
           
           <div class="modal-footer about-btns">
-            <a class="btn btn-success" title="MAppFx: Production Well Nitrates - CNMI" href="https://ghs-cdn.uog.edu/wp-content/databases/MAppFx/saipan-nitrates-app/index.html" target="_blank" rel="noreferrer noopener" role="button">MAppFx: Production Well Chloride - CNMI</a>
+            <a class="btn btn-success" title="MAppFx: Production Well Nitrates - CNMI" href="https://ghs-cdn.uog.edu/wp-content/databases/MAppFx/saipan-nitrates-app/index.html" target="_blank" rel="noreferrer noopener" role="button">MAppFx: Production Well Nitrates - CNMI</a>
             <a class="btn btn-primary" title="Coming soon!" href="#" target="_blank" rel="noreferrer noopener" role="button">WERI Technical Report</a>
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
