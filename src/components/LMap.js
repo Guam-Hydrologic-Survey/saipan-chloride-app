@@ -68,9 +68,6 @@ const pointSelectBtn = L.easyButton({
 
 export function LMap(element) {
 
-    // center of guam 
-    // const center = [13.5435056,144.7478083];
-
     // center of saipan
     const center = [15.187953368844124,145.71065791414713];
     const defaultZoom = 12;
@@ -90,7 +87,6 @@ export function LMap(element) {
 
     const mapTitle = L.control({position: 'topleft'});
 
-    //TODO: CHANGE MAP TITLE CARD
     mapTitle.onAdd =  function(map) {
         this._div = L.DomUtil.create('div', 'mapTitle'); 
         this._div.innerHTML = '<img src="./src/assets/WERI_MAppFx_CNMI_Production_Chloride_Title_Card_White_Bold.png" height="125">';
@@ -422,7 +418,7 @@ export function LMap(element) {
                 },
                 onEachFeature: (getValues) 
             }).addTo(map);
-            layerControl.addOverlay(geoJsonData, "Layer Name");
+            // layerControl.addOverlay(geoJsonData, "Layer Name");
 
             // for search control 
             let searchCoords = [];
