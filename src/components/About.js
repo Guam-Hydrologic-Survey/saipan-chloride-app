@@ -48,7 +48,7 @@ export function About(element) {
               <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                 <p>
                   <strong>WERI-GHS Information Management Team:</strong>
-                  <br>MW Zapata · DK Valerio · NC Habana
+                  <br>MW Zapata · DK Valerio · SM Quintanilla · NC Habana
                 </p>
               </div> <!-- end of tab 2 -->
               <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
