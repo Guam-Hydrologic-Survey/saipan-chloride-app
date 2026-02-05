@@ -86,8 +86,6 @@ export function LMap(element) {
     const layerControl = L.control.layers(baseLayers, null, { position: "bottomright" });
     layerControl.addTo(map);
 
-    const mapTitle = L.control({position: 'topleft'});
-
     TitleCard(map);
 
     const zoomControl = L.control.zoom({
