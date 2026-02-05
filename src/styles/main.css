@@ -225,3 +225,8 @@
 .spacer {
     height: 10px;
 }
+
+.tab-pane {
+    min-height: 300px;
+    max-height: 500px;
+}
