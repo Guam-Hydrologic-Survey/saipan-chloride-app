@@ -13,6 +13,7 @@ import { completeSelection, additionalSelection, alreadySelected } from "./Toast
 import { SelectionView, choices, choicesLayers, createCheckBox } from "./SelectionView.js";
 import { checkLastValue, getIcon } from "./CustomIcon.js";
 import { chlorideToggleBtns, layersResetBtnId, layersRemoveBtnId } from "./Legend_v3.js";
+import { TitleCard } from "./TitleCard.js";
 
 // utils 
 import { geoJsonUrl } from "../utils/dataSource.js";
@@ -85,15 +86,7 @@ export function LMap(element) {
     const layerControl = L.control.layers(baseLayers, null, { position: "bottomright" });
     layerControl.addTo(map);
 
-    const mapTitle = L.control({position: 'topleft'});
-
-    mapTitle.onAdd =  function(map) {
-        this._div = L.DomUtil.create('div', 'mapTitle'); 
-        this._div.innerHTML = '<img src="./src/assets/WERI_MAppFx_CNMI_Production_Chloride_Title_Card_White_Bold.png" height="125">';
-        return this._div;
-    };
-
-    mapTitle.addTo(map);
+    TitleCard(map);
 
     const zoomControl = L.control.zoom({
         // options: topleft, topright, bottomleft, bottomright
